@@ -28,4 +28,8 @@ jobs:
       run: |
         echo test project,
         make base_images
+    - name: Scan image
+      uses: anchore/scan-action@master
+      with:
+          image-reference: "wshihadeh/rails-base-image-ruby:2.6.4"
     
