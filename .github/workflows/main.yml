@@ -19,11 +19,14 @@ jobs:
           node-version: 10.13.0
     - name: Run a one-line script
       run: echo Hello, world!
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: wshihadeh/rails-base-image-ruby
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Run a multi-line script
       run: |
         echo test project,
         make base_images
-      env:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-
+    
