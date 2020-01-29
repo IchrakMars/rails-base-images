@@ -17,6 +17,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
           node-version: 10.13.0
+    - name: Run a one-line script
+      run: echo Hello, world!
     - name: Login to Docker Registry
       uses: azure/docker-login@v1
       with:
@@ -30,3 +32,4 @@ jobs:
       uses: anchore/scan-action@master
       with:
           image-reference: "wshihadeh/rails-base-image-ruby:2.6.4"
+
